@@ -1,8 +1,8 @@
-# Your Name Here
+# Luke Jackson
 # UWYO COSC 1010
-# Submission Date
+# 10/13/24
 # Lab 03 
-# Lab Section: 
+# Lab Section: 14
 # Sources, people worked with, help given to: 
 # your
 # comments
@@ -95,7 +95,20 @@ min_temps = [
 # The use of len() is fine
 # You can do this in two individual loops, or a single loop if you wish 
 
+max_temp = 0
+for temp in max_temps:
+    if temp > max_temp:
+        max_temp = temp
+    else:
+        max_temp = max_temp
 print(f"Max temp = {max_temp}")
+
+min_temp = 0
+for temp in min_temps:
+    if temp < min_temp:
+        min_temp = temp
+    else:
+        min_temp = min_temp
 print(f"Min temp = {min_temp}")
 
 # Given the below list 
@@ -104,11 +117,31 @@ numbers = [-61, -76, 94, 21, 97, -4, 21, 56, -26, 9, 100, 56, -7, -32, 60, -68, 
 # You should print the number and the result within an f-string 
 # Example output: 83 is positive
 
-print(f'There are {pos_count} positive numbers')
-print(f'There are {neg_count} negative numbers')
-print(f"Zero occurred {zero_count} time(s)")
+pos_count = []
+neg_count = []
+zero_count = []
+
+for number in numbers:
+    if number > 0:
+        pos_count.append(number)
+    elif number < 0:
+        neg_count.append(number)
+    elif number == 0:
+        zero_count.append(number)
+print(f'There are {len(pos_count)} positive numbers')
+print(f'There are {len(neg_count)} negative numbers')
+print(f"Zero occurred {len(zero_count)} time(s)")
 # Given the same numbers list, give the sum of all positive numbers, and the sum of all negative numbers
 # This should be done within a single loop
 
+pos_sum = 0
+neg_sum = 0
+
+for count in pos_count:
+    pos_sum = pos_sum + count
+    
+
+for count in neg_count:
+    neg_sum = neg_sum + count
 print(f"Sum of positive numbers {pos_sum}")
 print(f"Sum of negative numbers {neg_sum}")
